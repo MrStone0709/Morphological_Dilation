@@ -9,6 +9,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 add_executable(BinaryMorphology
     src/main.cpp
     src/BinaryImage.cpp
+    src/StructuringElement.cpp
 )
 
 target_include_directories(BinaryMorphology PRIVATE

@@ -1,18 +1,19 @@
 #include "BinaryImage.h"
+#include "StructuringElement.h"
 
-int main()
-{
-    BinaryImage image(5, 5);
+#include <vector>
 
-    image.set(2, 2, 1);
+int main() {
+  // 创建一个 5×5 方形结构元素
+  std::vector<std::vector<int>> matrix = {{1, 1, 1, 1, 1},
+                                          {1, 1, 1, 1, 1},
+                                          {1, 1, 0, 1, 1},
+                                          {1, 1, 1, 1, 1},
+                                          {1, 1, 1, 1, 1}};
 
-    image.set(1, 2, 1);
-    image.set(3, 2, 1);
+  StructuringElement element(matrix, 2, 2);
 
-    image.set(2, 1, 1);
-    image.set(2, 3, 1);
+  element.print();
 
-    image.print();
-
-    return 0;
+  return 0;
 }

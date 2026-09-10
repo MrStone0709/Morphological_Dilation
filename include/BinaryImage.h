@@ -16,7 +16,7 @@ public:
 
   int rows() const;
 
-  int cols() const; 
+  int cols() const;
 
   void print() const;
 };
