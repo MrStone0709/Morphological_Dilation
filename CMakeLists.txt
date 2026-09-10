@@ -10,6 +10,7 @@ add_executable(BinaryMorphology
     src/main.cpp
     src/BinaryImage.cpp
     src/StructuringElement.cpp
+    src/Morphology.cpp
 )
 
 target_include_directories(BinaryMorphology PRIVATE

@@ -26,6 +26,27 @@ int StructuringElement::getAnchorRow() const { return anchorRow; }
 
 int StructuringElement::getAnchorCol() const { return anchorCol; }
 
+/*
+ * 返回结构元素关于锚点旋转 180°后的结果
+ */
+StructuringElement StructuringElement::reflected() const {
+  std::vector<std::vector<int>> reflectedData(rows(),
+                                              std::vector<int>(cols(), 0));
+
+  for (int row = 0; row < rows(); row++) {
+    for (int col = 0; col < cols(); col++) {
+      reflectedData[row][col] = data[rows() - 1 - row][cols() - 1 - col];
+    }
+  }
+
+  int reflectedAnchorRow = rows() - 1 - anchorRow;
+
+  int reflectedAnchorCol = cols() - 1 - anchorCol;
+
+  return StructuringElement(reflectedData, reflectedAnchorRow,
+                            reflectedAnchorCol);
+}
+
 void StructuringElement::print() const {
   for (const auto &row : data) {
     for (int value : row) {

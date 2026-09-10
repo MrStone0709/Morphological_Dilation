@@ -24,6 +24,9 @@ public:
 
   int getAnchorCol() const;
 
+  // 返回关于锚点旋转 180°后的结构元素
+    StructuringElement reflected() const;
+
   void print() const;
 };
 
