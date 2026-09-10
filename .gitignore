@@ -1,0 +1,14 @@
+# CMake build output
+build/
+
+# Local IDE settings
+.vscode/
+.cache/
+compile_commands.json
+
+# Compiled binaries and object files
+*.o
+*.a
+*.so
+*.exe
+BinaryMorphology
