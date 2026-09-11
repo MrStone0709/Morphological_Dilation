@@ -13,6 +13,17 @@ add_executable(BinaryMorphology
     src/Morphology.cpp
 )
 
+add_executable(test_morphology
+    test/test_morphology.cpp
+    src/BinaryImage.cpp
+    src/StructuringElement.cpp
+    src/Morphology.cpp
+)
+
 target_include_directories(BinaryMorphology PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+
+target_include_directories(test_morphology PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
