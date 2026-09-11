@@ -8,7 +8,7 @@ private:
   std::vector<std::vector<int>> data;
 
 public:
-  BinaryImage(int rows, int cols);
+  BinaryImage(const std::vector<std::vector<int>> &matrix);
 
   int get(int row, int col) const;
 

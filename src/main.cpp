@@ -6,13 +6,15 @@
 #include <vector>
 
 int main() {
-  // 创建 5×5 图像
-  BinaryImage image(5, 5);
 
-  // 中心位置设置一个前景像素
-  image.set(1, 2, 1);
-  image.set(2, 2, 1);
-  image.set(2, 3, 1);
+  std::vector<std::vector<int>> imageData = {{0, 0, 0, 0, 0},
+                                             {0, 1, 1, 0, 0},
+                                             {0, 1, 1, 1, 0},
+                                             {0, 0, 0, 0, 0},
+                                             {0, 0, 0, 0, 0}};
+
+  // 创建 5×5 图像
+  BinaryImage image(imageData);
 
   std::cout << "Original image:" << std::endl;
   image.print();

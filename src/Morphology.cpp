@@ -11,7 +11,10 @@
  */
 BinaryImage Morphology::dilation(const BinaryImage &image,
                                  const StructuringElement &element) {
-  BinaryImage result(image.rows(), image.cols());
+  std::vector<std::vector<int>> resultMatrix(image.rows(),
+                                             std::vector<int>(image.cols(), 0));
+
+  BinaryImage result(resultMatrix);
 
   // 获取结构元素的 180°反射
   StructuringElement reflectedElement = element.reflected();
@@ -74,7 +77,10 @@ BinaryImage Morphology::dilation(const BinaryImage &image,
  */
 BinaryImage Morphology::erosion(const BinaryImage &image,
                                 const StructuringElement &element) {
-  BinaryImage result(image.rows(), image.cols());
+  std::vector<std::vector<int>> resultMatrix(image.rows(),
+                                             std::vector<int>(image.cols(), 0));
+
+  BinaryImage result(resultMatrix);
 
   // 遍历输出图像
   for (int row = 0; row < image.rows(); row++) {

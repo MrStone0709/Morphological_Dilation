@@ -1,8 +1,8 @@
 #include "BinaryImage.h"
 #include <iostream>
 
-BinaryImage::BinaryImage(int rows, int cols) {
-  data = std::vector<std::vector<int>>(rows, std::vector<int>(cols, 0));
+BinaryImage::BinaryImage(const std::vector<std::vector<int>> &matrix) {
+  data = matrix;
 }
 
 int BinaryImage::get(int row, int col) const { return data[row][col]; }
